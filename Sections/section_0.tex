@@ -1,0 +1,287 @@
+\section{Added Functionalities}
+\par Other than the many useful settings from the Classic Thesis template, I will outline here what I added. 
+\subsection{From the \texttt{theorem\_environments.tex}}
+You have many objects of the Theorem environment type. 
+\begin{theorem}[Title]\label{thm:firsttheorem}
+    Text
+\end{theorem}
+\begin{example}
+    text
+\end{example}
+\begin{definition}
+    text
+\end{definition}
+\begin{lemma}
+    text
+\end{lemma}
+\begin{conjecture}
+    text
+\end{conjecture}
+\begin{proposition}
+    text
+\end{proposition}
+\begin{corollary}
+    text
+\end{corollary}
+\begin{assumption}
+    text
+\end{assumption}
+\begin{result}
+    text
+\end{result}
+\begin{condition}
+    text
+\end{condition}
+\begin{question}
+    text
+\end{question}
+\begin{answer}
+    text
+\end{answer}
+
+\begin{problem}
+    text
+\end{problem}
+\begin{fact}
+    text
+\end{fact}
+\begin{remark}
+    text
+\end{remark}
+\begin{observation}
+    text
+\end{observation}
+\begin{claim}
+    text
+\end{claim}
+\subsection{From the \texttt{macro.tex}}
+\epigraph{This is a quote}{Author name}
+\lettrine[lines=2]{\color{BrickRed}T}{hanks} to the \texttt{lettrine} package, you can sart sections in a cool way. 
+Be ready to annotate equations:
+\vspace{4em}
+\begin{equation*}
+i \tikzmarknode{hbar}{\mathstrut\hbar} \frac{\partial}{\partial t}
+\eqnmarkbox[blue]{Psi1}{\Psi(x, t)} = \eqnmark[red]{Hhat}{\hat{H}}
+\eqnmarkbox[blue]{Psi2}{\Psi(x, t)}
+\end{equation*}
+\annotate[yshift=3em]{above}{hbar}{$\hbar = \frac{h}{2\pi}$, reduced Planck constant}
+\annotate[yshift=1em]{above}{Hhat}{Hamilton operator}
+\annotatetwo[yshift=-1em]{below}{Psi1}{Psi2}{Wave function}
+\vspace{1em}
+\begin{itemize}
+    \item You can \st{cross words}
+    \item highlight a \newterm{new term}
+    \item set the metadata in \texttt{hypersetup}
+    \item some cool colors \textcolor{green}{green}, \textcolor{red}{red}, \textcolor{blue}{blue}, \textcolor{blue-violet}{blue-violet}
+    \item you can also use them inside brackets like {\blueviolet this}
+    \item {\cmark}, {\xmark} are useful
+    \item \TODO{a todo generic tool}
+    \item \done command
+    \item you can use the indicator $\mathbbm{1}$
+    \item \hotidea{an idea}
+    \item $\nicefrac{1}{2}$ appears nicely in text
+    \item bold math installed, as well as rsfs for $\mathscr{L}$
+    \item $\d$ is the differential operator
+    \item if you have an equation:
+    \begin{equation} \label{eqn:equation example}
+        E = mc^2
+    \end{equation}
+    and another
+    \begin{equation} \label{eqn:equation example 2}
+        a^2 + b^2 = c^2
+    \end{equation}
+    you can reference them cleverly as \cref{eqn:equation example, eqn:equation example 2}. \Cref{eqn:equation example, eqn:equation example 2} can be used at the beginning of a sentence. 
+    \newline
+    This is to be compared in efficiency with mentioning Eq.~\ref{eqn:equation example 2} directly. 
+    \item equation labels are shown
+    \item \figleft, \figcenter, \figright, \figtop, \figbottom, \captiona, \captionb, \captionc, \captiond are useful for mentioning parts of an image.
+    \item \texttt{tikz} is loaded
+    \item \texttt{algorithm, algpseudocode} are loaded (see below)
+    % \item \algname{SGD}, \algnamesmall{SGD} and \algnametiny{SGD} are good for pointing out algorithm names in theory papers
+    \item \texttt{figref, Figref, twofigref, quadfigref, secref, Secref, twosecref, secrefs, eqref, Eqref, plaineqref, chapref, Chapref, rangechapref,algref, Algref, twoalgref, Twoalgref, partref, twopartref} are useful for quick referencing. 
+    \item you can do a list of theorems \TODO{not adjusted}
+    \item you can do a list of acronyms \TODO{not adjusted}
+    \item you can do a nomenclature list \TODO{not adjusted}
+\end{itemize}
+colored boxes
+\lawbox{Law Box}{text}
+\questionbox{question}{text}
+\referencesbox{References}
+\sectionstartbox{Text}
+place a horizontal line \horz
+\simone{a comment}
+\begin{restatable}[Restatable Theorem]{theorem}{restatable}\label{thm:restatable theorem}
+    We will repeat this just below. 
+\end{restatable}
+You can recall \cref{thm:restatable theorem} with the command of its name:
+\restatable*
+
+\par You can create algorithms 
+\begin{algorithm}
+    \caption{An algorithm with caption}\label{alg:cap}
+    \begin{algorithmic}
+    \Require $n \geq 0$
+    \Ensure $y = x^n$
+    \State $y \gets 1$
+    \State $X \gets x$
+    \State $N \gets n$
+    \While{$N \neq 0$}
+    \If{$N$ is even}
+        \State $X \gets X \times X$
+        \State $N \gets \frac{N}{2}$  \Comment{This is a comment}
+    \ElsIf{$N$ is odd}
+        \State $y \gets y \times X$
+        \State $N \gets N - 1$
+    \EndIf
+    \EndWhile
+    \end{algorithmic}
+    \end{algorithm}
+
+\subsection{From the \texttt{math\_commands.tex}}
+We have a very nice calligraphic package:
+\begin{equation}
+    aa
+\end{equation}
+We have a bunch of preset operators:
+\begin{align}
+    \argmax, \argmin, \sign, \card, \diam, \vol, \Corr, \signum, \dom, \epi, \kernel,
+    \\
+    \nullspace, \range, \Image, \interior, \rint, \bdry, \cl, \rank, \conv, \diag, \Arg
+    \\
+    \poly, \polylog, \avg, \val. 
+\end{align}
+Some shortened symbols:
+ \begin{align}
+     \independent, \Exp{X}{aX},\ExpCond{X}{aX}{Y}, \indep, \Prob, \Proba{X> t}, \expon{ax}, \dTV{\mu}{\nu}, \abc{a}{n}, \minim{1, 2, 3}, \maxim{1, 2, 3}
+     \\
+     \msf{sans serif}, \boltz{aX}{\beta}, \Var{X}{aX}, \CoV{X}{X}, \Tr{\mSigma}
+ \end{align}
+ \begin{align}
+  \LFtr{\cdot}, \dbar, \pdata, \ptrain, \Ptrain, \pmodel, \Pmodel, \ptildemodel, \pencode, \pdecode
+  \\
+  \precons, \bernoulli, \laplace, \reg, \rect, \KL, \parents. % \softmax, \sigmoid, \softoplus, 
+ \end{align}
+ Some norms:
+ \begin{align}
+    \norm{\cdot}, \normzero{\cdot}, \normone{\cdot}, \normtwo{\cdot}, \norminfty{\cdot}, \normsq{\cdot}, \matnorm{\cdot}{\cdot}
+\\
+\matnormsq{\cdot}{\cdot}, \ip{\cdot}{\cdot}, \nnz{\cdot}
+\end{align}
+ Other shortened symbols:
+ \begin{equation}
+    \lam, \eps, \l, \wh{\cdot}, \wt{\cdot}, \iu. 
+ \end{equation}
+ Asymptotic notation:
+ \begin{equation}
+    \bigO{\cdot}, \bigOm{\cdot}, \smallo{\cdot}, \smallom{\cdot}, \bigTh{\cdot}, \smallotil{\cdot}, \bigOtil{\cdot}, \smallomtil{\cdot}, \bigOmtil{\cdot}, \bigThtil{\cdot}. 
+ \end{equation}
+ Complexity classes:
+ \begin{equation}
+    \P, \NP, \BPP, \DTIME, \ZPTIME, \BPTIME, \NTIME. 
+ \end{equation}
+ Optimization:
+ \begin{equation}
+    \Opt, \Alg, \Lp, \Sdp. 
+ \end{equation}
+ Small operators:
+ \begin{equation}
+    \littlesum, \littleprod, \littlesumx, \littleprodx. 
+ \end{equation}
+ Brackets:
+ \begin{equation}
+    \fbr{\cdot}, \cbr{\cdot}, \rbr{\cdot}, \sbr{\cdot}, \abr{\cdot}, \nbr{\cdot}, \floorbr{\cdot}, \ceilingbr{\cdot}, \roundbr{\cdot}, \squarebr{\cdot}, \anglebr{\cdot}, \normbr{\cdot}, \curlybr{\cdot}, \absbr{\cdot}, \abs{\cdot}, \bigabs{\cdot}, \Bigabs{\cdot}. 
+ \end{equation}
+ \subsubsection{Notation}
+ Plain:
+ \begin{equation}
+    a, b, c, d, e, f, g, h, i, j, k, l, m ,n, o, p, q, r, s, t ,u, v, z, x, y 
+ \end{equation}
+ \begin{equation}
+    \alpha, \beta, \gamma, \delta, \eps,\varepsilon, \zeta, \eta, \theta,\vartheta, \iota, \kappa, \varkappa, \lambda, \mu, \nu, \xi, \pi,\varpi, \rho,\varrho, \sigma, \varsigma, \tau, \upsilon, \phi, \varphi, \chi, \psi, \omega
+ \end{equation}
+ \begin{equation}
+\Gamma, \Delta, \Theta, \Lambda, \Xi, \Sigma, \Phi, \Psi, \Omega, \Upsilon
+ \end{equation}
+ \begin{equation}
+    A, B, C, D, E, F, G, H, I, L, M, N, O, P, Q, R, S, T, U, V, Z, X, Y, J, K. 
+ \end{equation}
+ Math ducth:
+ \begin{equation}
+    \dca, \dcb, \dcc, \dcd, \dce, \dcf, \dcg, \dch, \dci, \dcj, \dck, \dcl, \dcm ,\dcn, \dco, \dcp, \dcq, \dcr, \dcs, \dct ,\dcu, \dcv, \dcz, \dcx, \dcy 
+ \end{equation}
+ \begin{equation}
+    \dcA, \dcB, \dcC, \dcD, \dcE, \dcF, \dcG, \dcH, \dcI, \dcL, \dcM, \dcN, \dcO, \dcP, \dcQ, \dcR, \dcS, \dcT, \dcU, \dcV, \dcZ, \dcX, \dcY, \dcJ, \dcK. 
+ \end{equation}
+ Math bold dutch:
+ \begin{equation}
+    \dbca, \dbcb, \dbcc, \dbcd, \dbce, \dbcf, \dbcg, \dbch, \dbci, \dbcj, \dbck, \dbcl, \dbcm ,\dbcn, \dbco, \dbcp, \dbcq, \dbcr, \dbcs, \dbct ,\dbcu, \dbcv, \dbcz, \dbcx, \dbcy 
+ \end{equation}
+ \begin{equation}
+    \dbcA, \dbcB, \dbcC, \dbcD, \dbcE, \dbcF, \dbcG, \dbcH, \dbcI, \dbcL, \dbcM, \dbcN, \dbcO, \dbcP, \dbcQ, \dbcR, \dbcS, \dbcT, \dbcU, \dbcV, \dbcZ, \dbcX, \dbcY, \dbcJ, \dbcK. 
+ \end{equation}
+ Calligraphic:
+ \begin{equation}
+    \calA, \calB, \calC, \calD, \calE, \calF, \calG, \calH, \calI, \calL, \calM, \calN, \calO, \calP, \calQ, \calR, \calS, \calT, \calU, \calV, \calZ, \calX, \calY, \calJ, \calK. 
+ \end{equation}
+ Scr:
+ \begin{equation}
+    \scrA, \scrB, \scrC, \scrD, \scrE, \scrF, \scrG, \scrH, \scrI, \scrL, \scrM, \scrN, \scrO, \scrP, \scrQ, \scrR, \scrS, \scrT, \scrU, \scrV, \scrZ, \scrX, \scrY, \scrJ, \scrK. 
+ \end{equation}
+ BB (notice no Expectation symbol):
+ \begin{equation}
+    \bbA, \bbB, \bbC, \bbD \bbF, \bbG, \bbH, \bbI, \bbL, \bbM, \bbN, \bbO, \bbP, \bbQ, \bbR, \bbS, \bbT, \bbU, \bbV, \bbZ, \bbX, \bbY, \bbJ, \bbK. 
+ \end{equation}
+
+ Random variables:
+ \begin{equation}
+    \ra, \rb, \rc, \rd, \re, \rf, \rg, \rh, \ri, \rj, \rk, \rl, \rm ,\rn, \ro, \rp, \rq, \rr, \rs, \rt ,\ru, \rv, \rz, \rx, \ry 
+ \end{equation}
+ \begin{equation}
+    \ralpha, \rbeta, \rgamma, \rdelta, \reps,, \rzeta, \reta, \rtheta, \riota, \rkappa, \rlambda, \rmu, \rnu, \rxi, \rpi,\rpi, \rrho, \rsigma, \rsigma, \rtau, \rupsilon, \rphi, \rchi, \rpsi, \romega
+ \end{equation}
+
+ vector:
+ \begin{equation}
+    \va, \vb, \vc, \vd, \ve, \vf, \vg, \vh, \vi, \vj, \vk, \vl, \vm ,\vn, \vo, \vp, \vq, \vr, \vs, \vt ,\vu, \vv, \vz, \vx, \vy 
+ \end{equation}
+ \begin{equation}
+    \valpha, \vbeta, \vgamma, \vdelta, \veps,, \vzeta, \veta, \vtheta, \viota, \vkappa, \vlambda, \vmu, \vnu, \vxi, \vpi,\vpi, \vrho, \vsigma, \vsigma, \vtau, \vupsilon, \vphi, \vchi, \vpsi, \vomega
+ \end{equation}
+ matrix:
+ \begin{equation}
+    \mA, \mB, \mC, \mD, \mE, \mF, \mG, \mH, \mI, \mL, \mM, \mN, \mO, \mP, \mQ, \mR, \mS, \mT, \mU, \mV, \mZ, \mX, \mY, \mJ, \mK. 
+ \end{equation}
+ \begin{equation}
+    \mGamma, \mDelta, \mTheta, \mLambda, \mXi, \mSigma, \mPhi, \mPsi, \mOmega, \mUpsilon
+    \end{equation}
+ random vector:
+ \begin{equation}
+    \rva, \rvb, \rvc, \rvd, \rve, \rvf, \rvg, \rvh, \rvi, \rvj, \rvk, \rvl, \rvm ,\rvn, \rvo, \rvp, \rvq, \rvr, \rvs, \rvt ,\rvu, \rvv, \rvz, \rvx, \rvy
+ \end{equation}
+ \begin{equation}
+    \rvalpha, \rvbeta, \rvgamma, \rvdelta, \rveps,, \rvzeta, \rveta, \rvtheta, \rviota, \rvkappa, \rvlambda, \rvmu, \rvnu, \rvxi, \rvpi,\rvpi, \rvrho, \rvsigma, \rvsigma, \rvtau, \rvupsilon, \rvphi, \rvchi, \rvpsi, \rvomega
+ \end{equation}
+ random matrix:
+ \begin{equation}
+    \rmA, \rmB, \rmC, \rmD, \rmE, \rmF, \rmG, \rmH, \rmI, \rmL, \rmM, \rmN, \rmO, \rmP, \rmQ, \rmR, \rmS, \rmT, \rmU, \rmV, \rmZ, \rmX, \rmY, \rmJ, \rmK 
+ \end{equation}
+ \begin{equation}
+    \rmGamma, \rmDelta, \rmTheta, \rmLambda, \rmXi, \rmSigma, \rmPhi, \rmPsi, \rmOmega, \rmUpsilon
+    \end{equation}
+ tensor:
+ \begin{equation}
+    \tA, \tB, \tC, \tD, \tE, \tF, \tG, \tH, \tI, \tL, \tM, \tN, \tO, \tP, \tQ, \tR, \tS, \tT, \tU, \tV, \tZ, \tX, \tY, \tJ, \tK. 
+ \end{equation}
+entries of vector:
+\begin{equation}
+    \eva, \evb, \evc, \evd, \eve, \evf, \evg, \evh, \evi, \evj, \evk, \evl, \evm ,\evn, \evo, \evp, \evq, \evr, \evs, \evt ,\evu, \evv, \evz, \evx, \evy 
+ \end{equation}
+ entries of matrix:
+ \begin{equation}
+    \emA, \emB, \emC, \emD, \emE, \emF, \emG, \emH, \emI, \emL, \emM, \emN, \emO, \emP, \emQ, \emR, \emS, \emT, \emU, \emV, \emZ, \emX, \emY, \emJ, \emK. 
+ \end{equation}
+ entries of tensor:
+ \begin{equation}
+    \etA, \etB, \etC, \etD, \etE, \etF, \etG, \etH, \etI, \etL, \etM, \etN, \etO, \etP, \etQ, \etR, \etS, \etT, \etU, \etV, \etZ, \etX, \etY, \etJ, \etK. 
+ \end{equation}
+ 

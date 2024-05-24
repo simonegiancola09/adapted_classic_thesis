@@ -1,0 +1,40 @@
+% article example for classicthesis.sty
+\documentclass[10pt,a4paper]{article} % KOMA-Script article scrartcl
+\usepackage{lipsum}
+\usepackage{url}
+\usepackage[nochapters]{../classicthesis} % nochapters
+\input{../AddedStuff/macro.tex}
+\input{../AddedStuff/math_commands.tex}
+\input{../AddedStuff/theorem_environments.tex}
+\addbibresource{Bibliography.bib}
+\begin{document} 
+    \pagestyle{plain}
+    \title{\rmfamily\normalfont\spacedallcaps{My Article Template}}
+    \author{\spacedlowsmallcaps{Simone Maria Giancola}\footnote{Institution}}
+    \date{} % no date
+    
+    \maketitle
+    
+    \begin{abstract}
+        \noindent\lipsum[1] Just a test.\footnote{This is a footnote.}
+    \end{abstract}
+       
+    \tableofcontents
+    \paragraph{Outline} This is a template for articles that mixes up the \texttt{classic-thesis} template by Andr{\'e} Miede \parencite{miedeClassicThesisTemplate2024}. By no means it is better, it is just the one I find most comfortable with working. Basically, I have added the functionalities that I like and need. Feel free to use it, and let me
+    me know if you actually do. 
+    \input{../Sections/section_0.tex}
+    \section{A Section}
+    \finalVersionString \lipsum[1]
+    \subsection{A Subsection}
+    \lipsum[1]
+    \subsection{A Subsection}
+    \section{A Section}
+    \lipsum[1]
+    
+    % bib stuff
+    \nocite{*}
+    \addtocontents{toc}{\protect\vspace{\beforebibskip}}
+    \addcontentsline{toc}{section}{\refname}    
+    % \bibliographystyle{plain}
+    \printbibliography 
+\end{document}

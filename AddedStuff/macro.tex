@@ -1,0 +1,249 @@
+%%%%%%%% Miscellany packages %%%%%%%%%%%
+\usepackage{ifthen}
+\usepackage{url}
+\usepackage{import}
+\usepackage{comment}
+\usepackage{soul} % to cross words
+\usepackage{pifont} % for ding
+\usepackage{epigraph} % for quotes
+% to quote parts of citations
+% \usepackage[autostyle]{csquotes}  
+% for start of chapter 
+\usepackage{lettrine}
+%B format example
+% \lettrine[lines=4]{\color{BrickRed}S}{tart} of the chapter
+% for customized lists
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+% use [start=0,label={(\bfseries A\arabic*):}]
+% horizontal line across the page
+\newcommand{\horz}{
+\vspace{-.4in}
+\begin{center}
+\begin{tabular}{p{\textwidth}}\\
+\hline
+\end{tabular}
+\end{center}
+}
+% Highlight a newly defined term
+\newcommand{\newterm}[1]{{\bf #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%% hyperref and its settings %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{hyperref}
+%%%%% for metadata %%%%%%%%
+\hypersetup{pdfauthor={Simone Maria Giancola},
+	pdftitle={A roadmap to Message Passing methods for inference on Mixed Generalized Linear Models, with emphasis on Mixed Noiseless Phase Retrieval.},
+	pdfsubject={MSc Thesis},
+	pdfkeywords={Statistical Physics, Machine Learning, Generalized Linear Models, Approximate Message Passing}
+	%pdfproducer={Latex with hyperref, or other system},
+}
+\hypersetup{colorlinks=false, urlcolor=magenta}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% geometry and its settings %%%%%%%%%%%%%%%%
+\usepackage[a4paper, total={5in, 10in}]{geometry}
+\savegeometry{origin}
+\geometry{rmargin=2cm,lmargin=2cm}% for the title page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% bibliography management %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[
+backend=biber,
+style=authoryear-comp,
+]{biblatex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% boxes management   %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tcolorbox} % for colored boxes
+\newcommand{\lawbox}[2]{\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=#1]
+#2 \end{tcolorbox}}
+\newcommand{\questionbox}[2]{\begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=#1]
+#2 \end{tcolorbox}}
+\definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
+\definecolor{brickred}{rgb}{0.8, 0.25, 0.33}
+\newcommand{\ideabox}[2]{\begin{tcolorbox}[colback=amethyst!5!white,colframe=amethyst!75!black,title=#1]
+#2 \end{tcolorbox}}
+\newcommand{\summarybox}[1]{\begin{tcolorbox}[colback=black!5!white,colframe=black!75!black,title=Summary]
+#1 \end{tcolorbox}}
+\newcommand{\referencesbox}[1]{\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Further References]
+#1 \end{tcolorbox}}
+\newcommand{\sectionstartbox}[1]{\begin{tcolorbox}[colback=gray!5!white,colframe=gray!75!black,title= In a nutshell]
+#1 \end{tcolorbox}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% colors management %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+% \definecolor{mydarkgreen}{RGB}{5,81,23}
+%\definecolor{mydarkgreen}{RGB}{39,130,67}
+\definecolor{mydarkred}{RGB}{192,25,25}
+\definecolor{mydarkgreen}{RGB}{25,192,25}
+\definecolor{mydarkblue}{RGB}{25,25,192}
+\definecolor{blue-violet}{rgb}{0.54, 0.17, 0.89}
+\newcommand{\red}{\color{mydarkred}}
+\newcommand{\green}{\color{mydarkgreen}}
+\newcommand{\blue}{\color{mydarkblue}}
+\newcommand{\blueviolet}{\color{blue-violet}}
+\newcommand{\cmark}{\green\ding{51}}%
+\newcommand{\xmark}{\red\ding{55}}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Productivity %%%%%%%%%%%%%%%%
+% Here TODOs and whatnot
+\usepackage[colorinlistoftodos,bordercolor=orange,backgroundcolor=orange!20,linecolor=orange,textsize=scriptsize]{todonotes}
+% named command
+\newcommand{\simone}[1]{\todo[inline]{{\textbf{Simone:} \emph{#1}}}}
+% Generic TODO command. 
+\newcommand{\TODO}[1]{\textcolor{red}{\textbf{TODO:}#1}}
+\newcommand{\hotidea}{{\color{red}\bf HOT IDEA: }}
+\newcommand{\done}{{\color{blue}\bf DONE }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% packages for math stuff %%%%%%%%%%%%%%%%
+% to avoid too many math alphabets
+\newcommand{\hmmax}{0} 
+\newcommand{\bmmax}{0}
+\usepackage{mathrsfs}
+\usepackage{annotate-equations}
+\renewcommand{\eqnhighlightheight}{\vphantom{\hat{H}}\mathstrut} % setting for annotate
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{bm} % for bold math
+\usepackage{amsthm}
+\usepackage{upgreek}
+\usepackage{bbm} % for indicator function
+\usepackage{cleveref}
+\usepackage{nicefrac}
+\usepackage{fixdif}   % for differential operator
+%\usepackage{physics}
+\usepackage{showlabels} % to show label equations
+\usepackage{thmtools} % for list of theorems
+\usepackage{thm-restate} % to restate theorems
+\usepackage{etoolbox} % for list of theorems
+\usepackage{mathabx} % other fonts
+\usepackage{siunitx} % standard unit symbols
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% packages for images and figures %%%%%%%%%%%%%%%%
+\usepackage{svg}
+\usepackage{subcaption}
+\usepackage{adjustbox}
+\usepackage{wrapfig}
+% Mark sections of captions for referring to divisions of figures
+\newcommand{\figleft}{{\em (Left)}}
+\newcommand{\figcenter}{{\em (Center)}}
+\newcommand{\figright}{{\em (Right)}}
+\newcommand{\figtop}{{\em (Top)}}
+\newcommand{\figbottom}{{\em (Bottom)}}
+\newcommand{\captiona}{{\em (a)}}
+\newcommand{\captionb}{{\em (b)}}
+\newcommand{\captionc}{{\em (c)}}
+\newcommand{\captiond}{{\em (d)}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% Tikz and its libraries  %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.arrows, decorations.pathmorphing}
+\usetikzlibrary{patterns}
+\usetikzlibrary{hobby} % for ..
+\usetikzlibrary{arrows.meta} % to control arrow size
+\tikzset{>={Latex[length=4,width=4]}} % for LaTeX arrow head
+\usetikzlibrary{calc,intersections,decorations.markings}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% pgf plots and its libraries %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% algorithm and its settings %%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+% \usepackage{algorithmic}
+% algname
+\newcommand{\algname}[1]{{\color{green}\small\textsf#1}\xspace}
+\newcommand{\algnamesmall}[1]{{\color{green}\scriptsize\textsf#1}\xspace}
+\newcommand{\algnametiny}[1]{{\color{green}\tiny\textsf#1}\xspace}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%% added lists at the beginning %%%%%%%%%%%%
+% Acronyms list and Symbols list
+\usepackage[acronym, toc, section=section]{glossaries}
+% \makeglossaries
+% \newacronym{gcd}{GCD}{Greatest Common Divisor}
+% \printglossary[type=\acronymtype]
+% nomenclature
+\usepackage{nomencl}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% REFERENCE SYSTEM %%%%%%%%%%%%%%%% Figure reference, lower-case.
+\def\figref#1{figure~\ref{#1}}
+% Figure reference, capital. For start of sentence
+\def\Figref#1{Figure~\ref{#1}}
+\def\twofigref#1#2{figures \ref{#1} and \ref{#2}}
+\def\quadfigref#1#2#3#4{figures \ref{#1}, \ref{#2}, \ref{#3} and \ref{#4}}
+% Section reference, lower-case.
+\def\secref#1{section~\ref{#1}}
+% Section reference, capital.
+\def\Secref#1{Section~\ref{#1}}
+% Reference to two sections.
+\def\twosecrefs#1#2{sections \ref{#1} and \ref{#2}}
+% Reference to three sections.
+\def\secrefs#1#2#3{sections \ref{#1}, \ref{#2} and \ref{#3}}
+% Reference to an equation, lower-case.
+\def\eqref#1{equation~\ref{#1}}
+% Reference to an equation, upper case
+\def\Eqref#1{Equation~\ref{#1}}
+% A raw reference to an equation---avoid using if possible
+\def\plaineqref#1{\ref{#1}}
+% Reference to a chapter, lower-case.
+\def\chapref#1{chapter~\ref{#1}}
+% Reference to an equation, upper case.
+\def\Chapref#1{Chapter~\ref{#1}}
+% Reference to a range of chapters
+\def\rangechapref#1#2{chapters\ref{#1}--\ref{#2}}
+% Reference to an algorithm, lower-case.
+\def\algref#1{algorithm~\ref{#1}}
+% Reference to an algorithm, upper case.
+\def\Algref#1{Algorithm~\ref{#1}}
+\def\twoalgref#1#2{algorithms \ref{#1} and \ref{#2}}
+\def\Twoalgref#1#2{Algorithms \ref{#1} and \ref{#2}}
+% Reference to a part, lower case
+\def\partref#1{part~\ref{#1}}
+% Reference to a part, upper case
+\def\Partref#1{Part~\ref{#1}}
+\def\twopartref#1#2{parts \ref{#1} and \ref{#2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% Renewed commands %%%%%%%%
+% \renewcommand{\thechapter}{\Roman{chapter}} 
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+\numberwithin{equation}{section}
+
+%%%%%%%% Bibliography Management %%%%%%%%%%%%%%%%
+% \usepackage[
+% backend=biber,
+% style=alphabetic,
+% ]{biblatex}
+
+% \addbibresource{bib.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%% DEPRECATED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newenvironment{abstractmod}%
+%     {\cleardoublepage\thispagestyle{empty}\null\vfill\begin{center}%
+%     \bfseries Abstract\end{center}}%
+%     {\vfill\null}
+%     \newenvironment{acknowledgements}%
+%     {\cleardoublepage\thispagestyle{empty}\null\vfill\begin{center}%
+%     \bfseries Acknowledgements\end{center}}%
+%     {\vfill\null}
+% \usepackage{verbatim} % for commenting multiple lines
+% \declaretheorem{theorem}
+%%%%% for differentials
+%\usepackage{fontsetup}
+%%% for partial differentiatio
+% checkmark and crossmark
+%\newcommand{\myred}[1]{{\color{RedOrange}#1}} % RGB ‎255, 83, 73    #ff5349
+%\newcommand{\mygreen}[1]{{\color{ForestGreen}#1}} % RGB 34,139,34
+%\newcommand{\myblue}[1]{{\color{NavyBlue}#1}}
+% strange stuff
+%\usepackage[round]{natbib}
+%\setcitestyle{authoryear,round,citesep={;},aysep={,},yysep={;}}
+%\renewcommand{\bibname}{References}
+%\renewcommand{\bibsection}{\subsubsection*{\bibname}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
